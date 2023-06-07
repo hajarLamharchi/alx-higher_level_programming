@@ -1,4 +1,6 @@
 #!/bin/bash
-file_name = $PYFILE
-output_file = "${file_name}c"
-python3 -m py_compile "$file_name" -o "$output_file"
+pyfile = $PYFILE
+output_file = "${pyfile}c"
+python3 -m py_compile "$pufile"
+mv "__pycache__/$pyfile" "$output_file"
+rmdir "__pycache__"
