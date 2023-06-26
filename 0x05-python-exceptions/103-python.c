@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "Python.h"
 /**
  * print_python_list - prints basic information about python list
@@ -13,7 +14,10 @@ void print_python_list(PyObject *p)
 	printf("[*] Python list info\n");
 	l = (PyListObject *)p;
 	if (!PyList_Check(p))
+	{
 		printf("  [ERROR] Invalid List Object\n");
+		return;
+	}
 	printf("[*] Size of the Python List = %ld\n", l->ob_base.ob_size);
 	printf("[*] Allocated = %ld\n", l->allocated);
 	for ( i = 0; i < l->ob_base.ob_size; i++)
@@ -32,7 +36,10 @@ void print_python_bytes(PyObject *p)
 	setbuf(stdout, NULL);
 	printf("[.] bytes object info\n");
 	if (!PyBytes_Check(p))
+	{
 		printf("  [ERROR] Invalid Bytes Object\n");
+		return;
+	}
 	printf("  size: %ld\n", size);
 }
 
@@ -45,6 +52,9 @@ void print_python_float(PyObject *p)
 	setbuf(stdout, NULL);
 	printf("[.] float object info\n");
 	if (!PyFloat_Check(p))
+	{
 		printf("  [ERROR] Invalid Float Object\n");
+		return;
+	}
 	printf("  value: %lf\n", PyFloat_AsDouble(p));
 }
