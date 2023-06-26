@@ -56,5 +56,5 @@ void print_python_float(PyObject *p)
 		printf("  [ERROR] Invalid Float Object\n");
 		return;
 	}
-	printf("  value: %lf\n", PyFloat_AsDouble(p));
+	printf("  value: %lf\n", ((PyFloatObject *)p)->ob_fval);
 }
