@@ -13,8 +13,8 @@ class Square:
             size (int): size of the square
             position (int, int): tuple of two positive integers
         """
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
     def area(self):
         """ Calculates the area of the square
