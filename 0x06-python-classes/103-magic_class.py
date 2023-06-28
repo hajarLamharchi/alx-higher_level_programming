@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 import math
+import dis
 """ This class defines a circle
 """
 
