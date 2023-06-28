@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import math
-""" This class defines a circle """
+""" This class defines a circle
+"""
 
 
 class MagicClass:
