@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 import math
+import dis
 """ This class defines a circle """
 
 
@@ -12,7 +13,7 @@ class MagicClass:
         """ Initializes a new instance of the Class """
         self.__radius = 0
 
-        if (not isinstance(radius, int)) and (not isinstance(radius, float)):
+        if type(radius) is not int and type(radius) is not float:
             raise TypeError('radius must be a number')
         self.__radius = radius
 
@@ -23,3 +24,5 @@ class MagicClass:
     def circumference(self):
         """ Calculates the circumference of the circle """
         return 2 * math.pi * self.__radius
+
+dis.dis(MagicClass)
