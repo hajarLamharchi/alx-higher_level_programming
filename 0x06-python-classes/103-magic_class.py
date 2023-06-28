@@ -1,10 +1,14 @@
 #!/usr/bin/python3
 import math
-""" This class defines a circle """
+""" This class defines a circle
+"""
 
 
 class MagicClass:
-    """ This class defines a circle """
+    """ This class defines a circle by
+        Attribute
+        radius (int or float): radius of the circle
+        """
     def __init__(self, radius):
         """ Initializes a new instance of the Class """
         self.__radius = 0
