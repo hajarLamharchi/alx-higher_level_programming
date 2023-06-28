@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 import math
-import dis
 """ This class defines a circle
 """
 
@@ -11,7 +10,8 @@ class MagicClass:
         radius (int or float): radius of the circle
         """
     def __init__(self, radius):
-        """ Initializes a new instance of the Class """
+        """ Initializes a new instance of the Class
+        """
         self.__radius = 0
 
         if type(radius) is not int and type(radius) is not float:
@@ -19,11 +19,11 @@ class MagicClass:
         self.__radius = radius
 
     def area(self):
-        """ Calculates the area of the circle """
+        """ Calculates the area of the circle
+        """
         return 2 * math.pi * self.__radius ** 2
 
     def circumference(self):
-        """ Calculates the circumference of the circle """
+        """ Calculates the circumference of the circle
+        """
         return 2 * math.pi * self.__radius
-
-dis.dis(MagicClass)
