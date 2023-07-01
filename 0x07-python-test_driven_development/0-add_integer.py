@@ -2,6 +2,8 @@
 """
 this is the add function module
 """
+
+
 def add_integer(a, b=98):
     """ this function adds two integers
         Args:
@@ -15,7 +17,7 @@ def add_integer(a, b=98):
     if (not isinstance(b, int)) and (not isinstance(b, float)):
         raise TypeError("b must be an integer")
     if isinstance(a, float):
-        a = int (a)
+        a = int(a)
     elif isinstance(b, float):
-        b = int (b)
+        b = int(b)
     return int(a + b)
