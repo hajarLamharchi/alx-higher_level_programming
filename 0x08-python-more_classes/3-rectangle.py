@@ -72,5 +72,7 @@ class Rectangle:
             return rect_str
         else:
             for i in range(self.__height):
-                rect_str += '#' * self.__width + '\n'
+                for i in range(self.__width):
+                    rect_str += '#'
+                rect_str += '\n'
             return rect_str
