@@ -5,43 +5,51 @@
 import sys
 
 
-def nqueens(n):
-    """ This function defines the nqueens puzzle
-        Args:
-        n(int): size of the chessboard
+def NQueens(n):
+    """ This function defines the N queens puzzle
+        Arg:
+        n (int): size of the chessboard always >= 4
     """
     if len(sys.argv) != 2:
-        print("Usage: nqueens N")
+        print('Usage: nqueens N')
         sys.exit(1)
-    n = sys.argv[1]
+
+    n = int(sys.argv[1])
     if not isinstance(n, int):
-        print("N must be a number")
+        print('N must be a number')
         sys.exit(1)
     elif n < 4:
-        print("N must be at least 4")
+        print('N must be at least 4')
         sys.exit(1)
 
-    def is_empty(board, row, col):
-        """ Checks if the position is clear """
-        for i in range(col):
-            if board[row][i] == 'Q':
-                return False
-        for i, j in zip(range(row, -1, -1), range(col, -1, -1)):
-            if board[i][j] == 'Q':
-                return False
-        for i, j in zip(range(row, n, 1), range(col, -1, -1)):
-            if board[i][j] == 'Q':
-                return False
-        return True
+    col = set()
+    pos_diag = set()
+    neg_diag = set()
 
-    def backtrack(board, col):
-        if col >= n :
-            for row in board:
-                print(' '.join(row))
-            print()
+    result = []
 
-        for i in range(n):
-            if is_empty(board, i, col):
-                board[i][col] = 'Q'
-                backtrack(board, col + 1)
-                board[i][col] = '.'
+    def backtrack(board, r):
+        """ Defines bachtracking algorithm"""
+        if r == n:
+            new_board = [[i, board[i]] for i in range(n)]
+            result.append(new_board)
+            return
+        for c in range(n):
+            if c in col or (r + c) in pos_diag or (r - c) in neg_diag:
+                continue
+            col.add(c)
+            pos_diag.add(r + c)
+            neg_diag.add(r - c)
+            board[r] = c
+            backtrack(board, r + 1)
+            col.remove(c)
+            pos_diag.remove(r + c)
+            neg_diag.remove(r - c)
+
+    backtrack([None] * n, 0)
+    return result
+
+
+solutions = NQueens(int(sys.argv[1]))
+for s in solutions:
+    print(s)
