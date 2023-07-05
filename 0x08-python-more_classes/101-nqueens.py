@@ -9,6 +9,7 @@ if len(sys.argv) != 2:
     print('Usage: nqueens N')
     sys.exit(1)
 
+
 def NQueens(n):
     """ This function defines the N queens puzzle
         Arg:
