@@ -15,13 +15,6 @@ def NQueens(n):
         Arg:
         n (int): size of the chessboard always >= 4
     """
-    if not isinstance(n, int):
-        print('N must be a number')
-        sys.exit(1)
-    elif n < 4:
-        print('N must be at least 4')
-        sys.exit(1)
-
     col = set()
     pos_diag = set()
     neg_diag = set()
@@ -49,7 +42,13 @@ def NQueens(n):
     backtrack([None] * n, 0)
     return result
 
-
-solutions = NQueens(int(sys.argv[1]))
+n = int(sys.argv[1])
+if not isinstance(n, int):
+    print('N must be a number')
+    sys.exit(1)
+elif n < 4:
+    print('N must be at least 4')
+    sys.exit(1)
+solutions = NQueens(n)
 for s in solutions:
     print(s)
