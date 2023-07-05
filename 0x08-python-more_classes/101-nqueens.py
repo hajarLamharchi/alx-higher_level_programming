@@ -15,7 +15,6 @@ def NQueens(n):
         Arg:
         n (int): size of the chessboard always >= 4
     """
-    n = int(sys.argv[1])
     if not isinstance(n, int):
         print('N must be a number')
         sys.exit(1)
