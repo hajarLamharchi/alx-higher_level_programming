@@ -58,3 +58,23 @@ Test file for 1-my_list.py
 >>> my_list.append(7)
 >>> my_list.print_sorted()
 [7]
+
+
+>>> a = [5, 8, 2]
+>>> my_list = MyList(a)
+>>> my_list.print_sorted()
+[2, 5, 8]
+
+
+>>> my_list1.print_sorted()
+Traceback (most recent call last):
+	...
+NameError: name 'my_list1' is not defined
+
+
+>>> my_list = [7, 2, 9]
+>>> my_list.print_sorted()
+Traceback (most recent call last):
+	...
+AttributeError: 'list' object has no attribute 'print_sorted'
+
