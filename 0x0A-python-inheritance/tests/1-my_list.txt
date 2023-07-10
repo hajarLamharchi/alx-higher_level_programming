@@ -26,6 +26,10 @@ Test file for 1-my_list.py
 >>> my_list.print_sorted()
 [-3, -2, -1, 0, 1, 2]
 
+>>> my_list = MyList([-1, -6, -2, -4])
+>>> my_list.print_sorted()
+[-6, -4, -2, -1]
+
 
 >>> my_list = MyList()
 >>> my_list.append(9999)
