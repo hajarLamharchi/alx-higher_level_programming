@@ -85,3 +85,8 @@ AttributeError: 'list' object has no attribute 'print_sorted'
 >>> my_list = MyList([])
 >>> my_list.print_sorted()
 []
+
+>>> my_list = MyList(15)
+Traceback (most recent call last):
+	...
+TypeError: 'int' object is not iterable
