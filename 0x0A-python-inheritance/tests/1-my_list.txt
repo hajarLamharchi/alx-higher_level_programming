@@ -15,6 +15,10 @@ Test file for 1-my_list.py
 >>> my_list.print_sorted()
 [1, 1, 1, 1, 1, 1]
 
+>>> my_list = MyList([1, 2, 3])
+>>> print(my_list)
+[1, 2, 3]
+
 
 >>> my_list = MyList()
 >>> my_list.append(-1)
