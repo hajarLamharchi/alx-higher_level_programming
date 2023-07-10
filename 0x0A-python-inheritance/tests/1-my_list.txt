@@ -78,3 +78,10 @@ Traceback (most recent call last):
 	...
 AttributeError: 'list' object has no attribute 'print_sorted'
 
+>>> my_list = MyList("Python")
+>>> my_list.print_sorted()
+['P', 'h', 'n', 'o', 't', 'y']
+
+>>> my_list = MyList([])
+>>> my_list.print_sorted()
+[]
