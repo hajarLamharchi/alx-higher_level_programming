@@ -62,3 +62,34 @@ TypeError: name must be an integer
 Traceback (most recent call last):
 	...
 TypeError: name must be an integer
+
+
+>>> bg.integer_validator("name", 7, 2)
+Traceback (most recent call last):
+	...
+TypeError: integer_validator() takes 3 positional arguments but 4 were given
+
+>>> bg.area(10)
+Traceback (most recent call last):
+	...
+TypeError: area() takes 1 positional argument but 2 were given
+
+>>> bg.integer_validator("name", None)
+Traceback (most recent call last):
+	...
+TypeError: name must be an integer
+
+>>> bg.integer_validator("name", [1, 2])
+Traceback (most recent call last):
+	...
+TypeError: name must be an integer
+
+>>> bg.integer_validator("name", (5,))
+Traceback (most recent call last):
+	...
+TypeError: name must be an integer
+
+>>> bg.integer_validator("name", {"age": 10})
+Traceback (most recent call last):
+	...
+TypeError: name must be an integer
