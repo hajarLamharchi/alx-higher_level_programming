@@ -90,3 +90,17 @@ AttributeError: 'list' object has no attribute 'print_sorted'
 Traceback (most recent call last):
 	...
 TypeError: 'int' object is not iterable
+
+>>> my_list = MyList((1, 2, 3))
+>>> my_list.print_sorted()
+[1, 2, 3]
+
+
+>>> my_list = MyList({"name": "jojo", "age": 25})
+>>> my_list.print_sorted()
+['age', 'name']
+
+>>> my_list = MyList(2 + 7j)
+Traceback (most recent call last):
+	...
+TypeError: 'complex' object is not iterable
