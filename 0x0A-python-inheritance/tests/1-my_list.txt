@@ -1,0 +1,54 @@
+#1-my_list
+
+==========================
+Test file for 1-my_list.py
+==========================
+
+>>> MyList = __import__('1-my_list').MyList
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list.append(1)
+>>> my_list.append(1)
+>>> my_list.append(1)
+>>> my_list.append(1)
+>>> my_list.append(1)
+>>> my_list.print_sorted()
+[1, 1, 1, 1, 1, 1]
+
+
+>>> my_list = MyList()
+>>> my_list.append(-1)
+>>> my_list.append(-3)
+>>> my_list.append(0)
+>>> my_list.append(1)
+>>> my_list.append(2)
+>>> my_list.append(-2)
+>>> my_list.print_sorted()
+[-3, -2, -1, 0, 1, 2]
+
+
+>>> my_list = MyList()
+>>> my_list.append(9999)
+>>> my_list.append(10000)
+>>> my_list.append(200000)
+>>> my_list.append(89999)
+>>> my_list.append(3000000)
+>>> my_list.append(1000)
+>>> my_list.print_sorted()
+[1000, 9999, 10000, 89999, 200000, 3000000]
+
+
+>>> my_list = MyList()
+>>> my_list.append(10)
+>>> my_list.append(20)
+>>> my_list.append(10)
+>>> my_list.append(20)
+>>> my_list.append(10)
+>>> my_list.append(20)
+>>> my_list.print_sorted()
+[10, 10, 10, 20, 20, 20]
+
+
+>>> my_list = MyList()
+>>> my_list.print_sorted()
+[]
