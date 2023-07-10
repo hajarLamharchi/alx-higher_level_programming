@@ -52,3 +52,9 @@ Test file for 1-my_list.py
 >>> my_list = MyList()
 >>> my_list.print_sorted()
 []
+
+
+>>> my_list = MyList()
+>>> my_list.append(7)
+>>> my_list.print_sorted()
+[7]
