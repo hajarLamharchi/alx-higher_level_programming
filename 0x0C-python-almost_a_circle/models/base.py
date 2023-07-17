@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ This module defines the class Base """
 import json
+import turtle
 
 
 class Base:
@@ -69,3 +70,42 @@ class Base:
                 return [cls.create(**d) for d in dicts]
         except IOError:
             return []
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """ opens a window and draws rectangles and squares """
+        s = turtle.getscreen()
+        t = turtle.Turtle()
+        t.shape("turtle")
+        turtle.bgcolor("blue")
+        t.pen(pencolor="black", fillcolor="grey", pensize=5, speed=1)
+        for instance in list_rectangles:
+            t.pen(pencolor="black", fillcolor="grey", pensize=5, speed=1)
+            data = instance.to_dictionary()
+
+            t.home()
+            t.setpos(data['x'], data['y'])
+
+            t.pd()
+            for i in range(2):
+                t.forward(data['width'])
+                t.left(90)
+                t.forward(data['height'])
+                t.left(90)
+            t.pu()
+
+        t.pen(pencolor="red", fillcolor="white", pensize=5, speed=0.5)
+
+        for instance in list_squares:
+            data = instance.to_dictionary()
+            t.home()
+            t.setpos(data['x'], data['y'])
+            t.pd()
+            for i in range(4):
+                t.forward(data['size'])
+                t.left(90)
+            t.pu()
+
+        turtle.getscreen()._root.mainloop()
+
+
