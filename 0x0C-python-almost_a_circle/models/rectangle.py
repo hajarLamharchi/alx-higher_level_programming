@@ -15,6 +15,7 @@ class Rectangle(Base):
     def width(self):
         """ Retrieves the width """
         return self.__width
+
     @width.setter
     def width(self, value):
         """ Sets the width to value """
@@ -29,6 +30,7 @@ class Rectangle(Base):
     def height(self):
         """ Rtrieves the height """
         return self.__height
+
     @height.setter
     def height(self, value):
         """ Sets the height to value """
@@ -43,6 +45,7 @@ class Rectangle(Base):
     def x(self):
         """ Retrives the x """
         return self.__x
+
     @x.setter
     def x(self, value):
         """ Sets x to value """
@@ -57,6 +60,7 @@ class Rectangle(Base):
     def y(self):
         """Rtrieves the y """
         return self.__y
+
     @y.setter
     def y(self, value):
         """ Sets y to value """
@@ -91,7 +95,10 @@ class Rectangle(Base):
     def __str__(self):
         """ Returns a string representation of the rectangle """
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
-                self.__x, self.__y, self.__width, self.__height)
+                                                       self.__x,
+                                                       self.__y,
+                                                       self.__width,
+                                                       self.__height)
 
     def update(self, *args, **kwargs):
         """ Updates the attributes of the class """
@@ -111,7 +118,7 @@ class Rectangle(Base):
                     self.x = arg
                 elif i == 4:
                     self.y = arg
-                i +=1
+                i += 1
         elif kwargs and len(kwargs) != 0:
             for k, v in kwargs.items():
                 if k == "id":
