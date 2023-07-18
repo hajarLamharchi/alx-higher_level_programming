@@ -107,5 +107,3 @@ class Base:
             t.pu()
 
         turtle.getscreen()._root.mainloop()
-
-

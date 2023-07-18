@@ -1,4 +1,3 @@
-#!/usr/bin/python3
 """ Defines the class testBase """
 import unittest
 from models.base import Base
@@ -6,7 +5,14 @@ from models.base import Base
 
 class testBase(unittest.TestCase):
     """ Defines the test cases for the class Base """
-
+    def setUp(self):
+        """ resets the __nb-object attribute before test """
+    Base._Base__nb_objects = 0
+    
+    def tearDown(self):
+        """ cleans up any resources"""
+        pass
+    
     def test_base_with_value(self):
         """ Tests the case with value """
         b = Base(7)

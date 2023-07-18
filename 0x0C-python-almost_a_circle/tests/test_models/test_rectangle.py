@@ -1,11 +1,19 @@
-#!/usr/bin/python3
 """ This module tests the use cases of the class rectangle """
 import unittest
 from models.rectangle import Rectangle
+from models.base import Base
 
 
 class testRectangle(unittest.TestCase):
     """ Defines test cases of rectangle """
+    def setUp(self):
+        """ resets the __nb-object attribute before test """
+        Base._Base__nb_objects = 0
+
+    def tearDown(self):
+        """ cleans up any resources"""
+        pass
+
     def test_height_width_value(self):
         """ tests when only the width and height are given """
         r1 = Rectangle(7, 2)
