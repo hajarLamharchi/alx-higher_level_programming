@@ -90,6 +90,48 @@ class testRectangleRaises(unittest.TestCase):
              Rectangle(2, -5, -3, -1)
              Rectangle(-2, -5, -3, -1)
 
+class testRectangleArea(unittest.TestCase):
+    """ Tests the method area"""
+    def test_area(self):
+        """ tests the area """
+        r1 = Rectangle(1, 2)
+        self.assertEqual(r1.area(), 2)
+
+        r2 = Rectangle(10, 5, 0, 0, 5)
+        self.assertEqual(r2.area(), 50)
+
+
+class testRectangleUpdate(unittest.TestCase):
+    """test the method update"""
+    def test_update_id(self):
+        """test update id"""
+        r = Rectangle(1, 1, 1, 1)
+        r.update(10)
+        self.assertEqual(r.id, 10)
+
+    def test_update_width(self):
+        """test update width"""
+        r = Rectangle(1, 1, 1, 1)
+        r.update(10, 7)
+        self.assertEqual(r.width, 7)
+
+    def test_update_height(self):
+        """test update height"""
+        r = Rectangle(1, 1, 1, 1)
+        r.update(10, 7, 2)
+        self.assertEqual(r.height, 2)
+
+    def test_update_x(self):
+        """test update x"""
+        r = Rectangle(1, 1, 1, 1)
+        r.update(10, 7, 2, 9)
+        self.assertEqual(r.x, 9)
+
+    def test_update_y(self):
+        """test update y"""
+        r = Rectangle(1, 1, 1, 1)
+        r.update(10, 7, 2, 9, 3)
+        self.assertEqual(r.y, 3)
 
 
 
