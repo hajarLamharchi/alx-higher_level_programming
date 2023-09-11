@@ -14,5 +14,9 @@ if (process.argv[2] === undefined || process.argv[2] === null) {
       secondMax = process.argv[i];
     }
   }
-  console.log(secondMax);
+  if (secondMax === 0) {
+    console.log(0);
+  } else {
+    console.log(secondMax);
+  }
 }
