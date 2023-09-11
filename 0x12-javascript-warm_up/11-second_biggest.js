@@ -10,7 +10,7 @@ if (process.argv[2] === undefined || process.argv[2] === null) {
     if (process.argv[i] > max) {
       secondMax = max;
       max = process.argv[i];
-    } else if (process.argv[i] > secondMax && process.argv[i] !== max) {
+    } else if (process.argv[i] > secondMax && process.argv[i] <= max) {
       secondMax = process.argv[i];
     }
   }
