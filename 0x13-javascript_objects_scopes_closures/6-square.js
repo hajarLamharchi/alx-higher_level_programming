@@ -7,7 +7,7 @@ class newSquare extends Square {
   }
 
   charPrint (c) {
-    if (c === undefined || c === null) {
+    if (c === undefined) {
       c = 'X';
     }
     for (let i = 0; i < this.size; i++) {
