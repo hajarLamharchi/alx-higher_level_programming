@@ -14,8 +14,8 @@ def get_state_name(username, password, name, state):
             db=name
     )
     cur = db.cursor()
-    cur.execute("SELECT * FROM states WHERE name = '{}'\
-                ORDER BY states.id".format(state))
+    cur.execute("SELECT * FROM states WHERE name = %s ORDER BY states.id",
+                (state, ))
     rows = cur.fetchall()
     for row in rows:
         print(row)
