@@ -17,17 +17,16 @@ def list_states_cities(username, password, name):
 
     session = Session(engine)
     query = (
-            session.query(State, City)
-            .join(City, State.id == City.state_id)
-            .order_by(State.id, City.id)
+            session.query(State)
+            .order_by(State.id)
             .all()
         )
-    i = 1
-    for state, city in query:
-        while state.id == i:
-            print("{}: {}".format(state.id, state.name))
-            i = i + 1
-        print("\t{}: {}".format(city.id, city.name))
+
+    for state in query:
+        print("{}: {}".format(state.id, state.name))
+        cities = state.cities
+        for city in cities:
+            print("\t{}: {}".format(city.id, city.name))
 
     session.close()
 
