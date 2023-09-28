@@ -1,0 +1,2 @@
+# BigO for finding the peak of an unsorted list of integer
+O(log(n))
