@@ -10,12 +10,15 @@ request(url, options, (err, response, body) => {
   if (err) {
     console.error(err);
   }
-  for (const character of body.characters) {
-    request(character, options, (err, response, body) => {
+	let index = 0;
+	while (index < body.characters.length) {
+		const character = body.characters[index];
+    		request(character, options, (err, response, body) => {
       if (err) {
         console.error(err);
       }
       console.log(body.name);
     });
+		index++;
   }
 });
